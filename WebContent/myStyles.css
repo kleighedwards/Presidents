@@ -1,0 +1,47 @@
+body {
+    background-image: image(vintage-american.jpg);
+    background-color: black;
+    background-size:100%;
+}
+
+h1{
+  position: center;
+}
+
+.p {
+  font-size; 24px;
+}
+
+img {
+    position: center;
+    border-radius: 20px;
+    max-width: 90%;
+}
+
+area {
+    display: none;
+}
+
+textarea{
+
+}
+
+input{
+      background-color:#0066ff;
+      border: none;
+      color: white;
+      padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      border-radius: 10px;}
+}
+
+input:hover {
+  background-color: #3e8e41;
+}
+
+text {
+  background-color: ;
+}
