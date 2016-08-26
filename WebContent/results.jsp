@@ -9,16 +9,22 @@
 <body>
 
 <p>Please enter the President's term Result:</p>
-<form>
+<form action="Election" method="POST">
 	<input type = "text" name ="term"/>
-	<input type = "submit" value="submit"/>
-	<input type = "submit" value="Previous"/>
-	<input type = "submit" value="Next"/>
+	<input type = "submit" value="Submit" name="button"/>
+	<input type = "submit" value="Previous" name="button"/>
+	<input type = "submit" value="Next" name="button"/>
 </form>
 
-<p>President for term ${theterm}:</p>
-<p>${thepresident}</p>
-<p>${thepresident.firstName}</p>
+<c:choose>
+	<c:when test="${theterm > 44 || theterm < 1}">
+		<p>Invalid Term, please correct your input!</p>
+	</c:when>
+	<c:otherwise>
+		<p>President:</p>
+		<p>${thepresident}</p>
+	</c:otherwise>
+</c:choose>
 
 </body>
 </html>

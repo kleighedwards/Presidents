@@ -91,6 +91,6 @@ public class President {
 
 	@Override
 	public String toString() {
-		return firstName + " " + middleName + " " + lastName + " " + startTerm + "-" + endTerm;
+		return number + " " + firstName + " " + middleName + " " + lastName + " " + startTerm + "-" + endTerm + "-" + party;
 	}
 }
