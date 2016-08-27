@@ -9,28 +9,42 @@ import java.util.List;
 import javax.servlet.ServletContext;
 
 public class PresidentFileDAO implements PresidentDAO {
-	private static final String filename = "WEB-INF/presidents.csv";
+	private static final String filename1 = "WEB-INF/presidents.csv";
+	private static final String filename2 = "WEB-INF/funfacts.csv";
 	private ServletContext servletContext;
 	private List<President> presidents;
+	private List<Fact> facts;
 	
 
 	public PresidentFileDAO(ServletContext context) {
 		servletContext = context;
 		presidents = new ArrayList<>();
 		loadPresidentsFromFile();
+		facts = new ArrayList<>();
+		loadFactsFromFile();
 	}
 	
 	public List<President> getPresidents() {
 		return presidents;
 	}
+	
+	public List<Fact> getFacts() {
+		return facts;
+	}
+	
 	public President getPresident(int term) {
 		return this.presidents.get(term-1);
 	}
+	
+	public Fact getFact(int term) {
+		return this.facts.get(term-1);
+	}
+	
 
 	private void loadPresidentsFromFile() {
 		// Retrieve an input stream from the servlet context
 		// rather than directly from the file system
-		InputStream is = servletContext.getResourceAsStream(filename);
+		InputStream is = servletContext.getResourceAsStream(filename1);
 		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
 			String line;
 			while ((line = buf.readLine()) != null) {
@@ -47,6 +61,28 @@ public class PresidentFileDAO implements PresidentDAO {
 			System.err.println(e);
 		}
 		for(President index: presidents){
+			System.out.println(index);
+		}
+	}
+	
+	private void loadFactsFromFile() {
+		// Retrieve an input stream from the servlet context
+		// rather than directly from the file system
+		InputStream is = servletContext.getResourceAsStream(filename2);
+		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
+			String line;
+			while ((line = buf.readLine()) != null) {
+				String[] tokens = line.split(":");
+			    int number = Integer.parseInt(tokens[0].trim());
+			    System.out.println("token[0]: " + number);
+			    String statement = tokens[1].trim();
+			    System.out.println("token[1]: " + statement);
+			    facts.add(new Fact(number, statement));
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		for(Fact index: facts){
 			System.out.println(index);
 		}
 	}

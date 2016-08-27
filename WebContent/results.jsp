@@ -23,6 +23,7 @@
 	<c:otherwise>
 		<p>President:</p>
 		<p>${thepresident}</p>
+		<p>Fun Fact: ${thefact}</p>
 	</c:otherwise>
 </c:choose>
 

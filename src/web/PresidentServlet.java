@@ -36,6 +36,7 @@ public class PresidentServlet extends HttpServlet{
 			if (!((term > TERM_MAX) || (term < 1))){
 				session.setAttribute("term", term);
 				req.setAttribute("thepresident", presidentDAO.getPresident(term));
+				req.setAttribute("thefact", presidentDAO.getFact(term));
 			}
 			req.setAttribute("theterm", term);
 		}
@@ -45,6 +46,7 @@ public class PresidentServlet extends HttpServlet{
 			if (newterm > TERM_MAX) newterm = 1;
 			session.setAttribute("term", newterm);
 			req.setAttribute("thepresident", presidentDAO.getPresident(newterm));
+			req.setAttribute("thefact", presidentDAO.getFact(newterm));
 		}
 		if (button.equals("Previous")){
 			int oldterm = (int)(session.getAttribute("term"));
@@ -52,6 +54,7 @@ public class PresidentServlet extends HttpServlet{
 			if (newterm <  1) newterm = TERM_MAX;
 			session.setAttribute("term", newterm);
 			req.setAttribute("thepresident", presidentDAO.getPresident(newterm));
+			req.setAttribute("thefact", presidentDAO.getFact(newterm));
 		}
 		
 		req.getRequestDispatcher("/results.jsp").forward(req, resp);
