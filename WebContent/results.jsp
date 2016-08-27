@@ -4,9 +4,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="myStyles.css">
 <title>Presidents</title>
 </head>
 <body>
+<img src="./images/prez.jpg" alt="President">
 
 <p>Please enter the President's term Result:</p>
 <form action="Election" method="POST">
