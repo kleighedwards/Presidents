@@ -8,7 +8,7 @@
 <title>Presidents</title>
 </head>
 <body>
-<img src="./images/prez.jpg" alt="President">
+<a img src="./images/prez.jpg" alt="President"></a>
 
 <p>Please enter the President's term Result:</p>
 <form action="Election" method="POST">
@@ -19,7 +19,7 @@
 </form>
 
 <c:choose>
-	<c:when test="${theterm > 44 || theterm < 1}">
+	<c:when test="${term > 44 || theterm < 1}">
 		<p>Invalid Term, please correct your input!</p>
 	</c:when>
 	<c:otherwise>
