@@ -10,7 +10,7 @@
 <body>
 <a img src="./images/prez.jpg" alt="President"></a>
 
-<p>Please enter the President's term Result:</p>
+<p>Please enter the President's term:</p>
 <form action="Election" method="POST">
 	<input type = "text" name ="term"/>
 	<input type = "submit" value="Submit" name="button"/>
@@ -20,7 +20,7 @@
 
 <c:choose>
 	<c:when test="${term > 44 || theterm < 1}">
-		<p>Invalid Term, please correct your input!</p>
+		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
 		<p>President:</p>

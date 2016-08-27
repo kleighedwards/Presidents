@@ -40,14 +40,15 @@ public class PresidentServlet extends HttpServlet{
 			
 			// if Submit button is pressed with empty field, get the last selected President
 			if(termString == null || termString == ""){
-				term =  ((int)(session.getAttribute("term")));
+				term = (int)(session.getAttribute("term"));
 			}
 			
 			// if input is not an Integer, get the last selected President
 			try {
-				term = Integer.parseInt(termString);}
-			catch (IllegalArgumentException e){
-				term =  ((int)(session.getAttribute("term")));				
+				term = Integer.parseInt(termString);
+			}
+			catch (IllegalArgumentException e){			
+				term = (int)(session.getAttribute("term"));
 			}
 			
 			// if term is in range, get the President
