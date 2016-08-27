@@ -1,6 +1,6 @@
 body {
-    background-image: image(vintage-american.jpg);
-    background-color: black;
+    background-image: url(../images/vintage-american.jpg);
+    background-color: #0066ff;
     background-size:100%;
 }
 
