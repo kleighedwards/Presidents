@@ -25,14 +25,14 @@
   </p>
 </form>
 
-<c:choose>–
+<c:choose>
 	<c:when test="${term > 44 || term < 1}">
 		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
-			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br>
+			<p>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</p><br>
 			
-			<p>Fun Fact: ${thefact.statement}</p>
+			<p>Fun Fact : ${thefact.statement}</p>
 	</c:otherwise>
 </c:choose>
 

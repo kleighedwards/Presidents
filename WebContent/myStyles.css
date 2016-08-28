@@ -1,11 +1,13 @@
 body {
-    background-image: url("./images/we-the-people-1.jpg");
+    background-image: url("./images/vintage-american.jpg");
     background-repeat: y-repeat;
+    background-width: 100%;
     background-color: blue;
 }
 
-.p {
-	color: black;
+p {
+	color:black;
+	background: grey;
   	font-size: 20px;
 }
 
