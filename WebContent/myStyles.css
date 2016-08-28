@@ -3,24 +3,79 @@ body {
     background-repeat: y-repeat;
     background-width: 100%;
     background-color: blue;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#container{
+	background-color: #8A8A8A;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+    border-radius: 10px;
+}
+#header{
+	background-color:;
+	color:;
+	padding:10px;
+}
+
+#content{
+	padding:10px;
+}
+
+#nav{
+	width:80px;
+	float: left;
+}
+
+#nav ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+#main{
+	width: 960px;
+	float: right;
+}
+
+#footer{
+	clear:both;
+	padding: 10px;
+	background-color: #999999;
+	color: black;
+	text-align: right;
+	border-radius: 10px;
+	
 }
 
 p {
 	color:black;
-	background: grey;
   	font-size: 20px;
 }
 
 img {
-	align: middle;
+	align: left;
 	vertical-align:bottom;
     border-radius: 20px;
-    max-width: 99%;
+    max-width: 100%;
     background-position: center;
 }
 
+
 img-solo {
 	border-radius: 20px;
+	image-size: 
 	
 }
 

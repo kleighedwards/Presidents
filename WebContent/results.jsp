@@ -8,34 +8,58 @@
 <title>Presidents</title>
 </head>
 <body>
-
-<form action="Election" method="POST">
-  <p>Please enter the President's term:
-	<input type = "text" name ="term"/>
-	<input type = "submit" value="Submit" name="button"/>
-	<input type = "submit" value="Previous" name="button"/>
-	<input type = "submit" value="Next" name="button"/>
-    <select name="Filter">
-       <option value="All Presidents" selected name="fbutton">All Presidents</option>
-       <option value="Democrats" name="fbutton">Democrats</option>
-       <option value="Republicans" name="fbutton">Republicans</option>
-       <option value="Whigs" name="fbutton">Whigs</option>
-       <option value="Independents" name="fbutton">Independents</option>
-       <option value="Federalists" name="fbutton">Federalists</option>
-    </select>
-  </p>
-</form>
-
+<div id="container">
+	<div id="header">
+		<h1>Presidents web site</h1>
+	</div>
+	<div id="content">
+		<div id="nav">
+			<h3></h3>
+			<ul>
+				<li><li>
+				<li><li>
+				<li><li>
+				<li><li>
+				<li><li>
+			</ul>
+		</div>
+		<div id="main">
 <c:choose>
 	<c:when test="${term > 44 || term < 1}">
 		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
-			<p>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</p><br>
-			
+			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br>
+		
 			<p>Fun Fact : ${thefact.statement}</p>
 	</c:otherwise>
 </c:choose>
+		<form action="Election" method="POST">
+ 			 <p>Please enter the President's term:
+				<input type = "text" name ="term"/>
+				<input type = "submit" value="Submit" name="button"/><br>
+				<input type = "submit" value="Previous" name="button"/>
+				<input type = "submit" value="Next" name="button"/>
+   			 <select name="Filter">
+      			 <option value="All Presidents" selected name="fbutton">All Presidents</option>
+      			 <option value="Democrats" name="fbutton">Democrats</option>
+      			 <option value="Republicans" name="fbutton">Republicans</option>
+      			 <option value="Whigs" name="fbutton">Whigs</option>
+      			 <option value="Independents" name="fbutton">Independents</option>
+       			<option value="Federalists" name="fbutton">Federalists</option>
+    </select>
+  </p>
+</form>
+		<p>Fact with do here</p>
+		</div>
+	</div>
+	<div id="footer">
+		Copyright &copy; 2016 Rod Hammond, Kristen Edwards, & Toland Gooch
+	</div>
+</div>
+
+
+
 
 </body>
 </html>

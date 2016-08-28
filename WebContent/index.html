@@ -6,14 +6,41 @@
 <title>Presidents</title>
 </head>
 <body>
-<form action="Election" method="POST">
-<p>Please enter the President's term:
-	<input type = "text" name ="term" value="1" />
-	<input type = "submit" value="Submit" name="button"/>
-	<input type = "submit" value="Previous" name="button"/>
-	<input type = "submit" value="Next" name="button"/>
-	</p>
-</form>
-<img src="./images/prez.jpg" alt="President">
+<div id="container">
+	<div id="header">
+		<h1>Do you know your U.S. Presidents?</h1>
+	</div>
+	<div id="content">
+		<div id="poster-image">
+		<img src="./images/prez.jpg" alt="President">
+		</div>
+		<div id="nav">
+			<h3></h3>
+			<ul>
+				<li><li>
+				<li><li>
+				<li><li>
+				<li><li>
+				<li><li>
+			</ul>
+		</div>
+		<div id="main">
+		<br>
+			<form action="Election" method="POST">
+				<p>Please enter the President's term:
+					<input type = "text" name ="term" value="1" />
+					<input type = "submit" value="Submit" name="button"/><br>
+					<input type = "submit" value="Previous" name="button"/>
+					<input type = "submit" value="Next" name="button"/>
+				</p>
+			</form>
+		<p>Fact with do here</p>
+		</div>
+	</div>
+	<div id="footer">
+		Copyright &copy; 2016 Rod Hammond, Kristen Edwards, & Toland Gooch
+	</div>
+</div>
+
 </body>
 </html>
