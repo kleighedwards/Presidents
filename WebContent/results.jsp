@@ -10,12 +10,8 @@
 <body>
 <a img src="./images/prez.jpg" alt="President"></a>
 
-<<<<<<< HEAD
-=======
-<p>Please enter the President's term:</p>
->>>>>>> 262f114de4815ac09b4575a26257cfaf0a1ab29f
 <form action="Election" method="POST">
-<p>Please enter the President's term Result:
+<p>Please enter the President's term:
 	<input type = "text" name ="term"/>
 	<input type = "submit" value="Submit" name="button"/>
 	<input type = "submit" value="Previous" name="button"/>
@@ -24,20 +20,13 @@
 </form>
 
 <c:choose>
-	<c:when test="${term > 44 || theterm < 1}">
+	<c:when test="${term > 44 || term < 1}">
 		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
-<<<<<<< HEAD
-		<p>${thepresident.}</p>
-		<p>${president}</p>
-			
-	
-=======
 		<p>President:</p>
 		<p>${thepresident}</p>
 		<p>Fun Fact: ${thefact}</p>
->>>>>>> 262f114de4815ac09b4575a26257cfaf0a1ab29f
 	</c:otherwise>
 </c:choose>
 
