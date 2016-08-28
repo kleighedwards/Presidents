@@ -19,7 +19,7 @@
 	</c:when>
 	<c:otherwise>
 			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2>
-			<h3>${thepresident.number}th Term</h3><br>
+			<h3>Term Number: ${thepresident.number}</h3><br>
 		    	<img src="./images/${term}.jpg"/><br>
 		    <h3>${thepresident.startTerm}-${thepresident.endTerm}</h3><br>
 		    <h3>${thepresident.party}</h3><br>
