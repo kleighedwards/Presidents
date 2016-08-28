@@ -54,7 +54,7 @@
     </select>
   </p>
 </form>
-		<p>Fact with do here</p>
+		
 		</div>
 	</div>
 	<div id="footer">
