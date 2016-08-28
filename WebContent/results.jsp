@@ -21,7 +21,8 @@
        <option value="Democrats" name="fbutton">Democrats</option>
        <option value="Republicans" name="fbutton">Republicans</option>
        <option value="Whigs" name="fbutton">Whigs</option>
-       <option value="First Ladies" name="fbutton">First Ladies</option>
+       <option value="Independents" name="fbutton">Independents</option>
+       <option value="Federalists" name="fbutton">Federalists</option>
     </select>
   </p>
 </form>
