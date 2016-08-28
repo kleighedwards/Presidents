@@ -4,16 +4,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="myStyles.css">
 <title>Presidents</title>
 </head>
 <body>
 
-<p>Please enter the President's term Result:</p>
 <form action="Election" method="POST">
+<p>Please enter the President's term Result:
 	<input type = "text" name ="term"/>
 	<input type = "submit" value="Submit" name="button"/>
 	<input type = "submit" value="Previous" name="button"/>
 	<input type = "submit" value="Next" name="button"/>
+	</p>
 </form>
 
 <c:choose>
@@ -21,8 +23,10 @@
 		<p>Invalid Term, please correct your input!</p>
 	</c:when>
 	<c:otherwise>
-		<p>President:</p>
-		<p>${thepresident}</p>
+		<p>${thepresident.}</p>
+		<p>${president}</p>
+			
+	
 	</c:otherwise>
 </c:choose>
 
