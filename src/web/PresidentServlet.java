@@ -1,6 +1,7 @@
 package web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +27,8 @@ public class PresidentServlet extends HttpServlet{
 		String termString = "1";
 		int term = 0;
 		String button = req.getParameter("button");
+		String fbutton =  req.getParameter("Filter");
+		
 		HttpSession session = req.getSession();
 		
 		// if new session, and the Submit button is pressed without term input, get President Washington
@@ -37,6 +40,7 @@ public class PresidentServlet extends HttpServlet{
 			
 			// read user input for President's term
 			termString = req.getParameter("term");
+			System.out.println("Filter Button Status: " + fbutton);
 			
 			// if Submit button is pressed with empty field, get the last selected President
 			if(termString == null || termString == ""){
@@ -65,8 +69,11 @@ public class PresidentServlet extends HttpServlet{
 			// if term is in range, get the President
 			if (!((term > TERM_MAX) || (term < 1))){
 				session.setAttribute("term", term);
-				req.setAttribute("thepresident", presidentDAO.getPresident(term));
+				List<President> filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getNumber() > 0);
+				req.setAttribute("thepresident", filtered.get(term - 1));
 				req.setAttribute("thefact", presidentDAO.getFact(term));
+//				req.setAttribute("thepresident", presidentDAO.getPresident(term));
+//				req.setAttribute("thefact", presidentDAO.getFact(term));
 			}
 			
 			req.setAttribute("term", term);
