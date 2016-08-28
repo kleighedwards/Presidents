@@ -18,7 +18,8 @@
 		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
-			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br>
+			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br><br>
+			
 		    	<img src="./images/${term}.jpg"/><br>
 		    	
 			<h3>Fun Fact : ${thefact.statement}</h3>

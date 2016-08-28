@@ -15,6 +15,7 @@ h1, h2, h3 {
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 10px;
 }
 
 #container{
@@ -76,7 +77,7 @@ img {
 #main-img {
 	border-radius: 20px;
 	image-size: ;
-	max-width: 50%;
+	max-width: 40%;
 	
 }
 
