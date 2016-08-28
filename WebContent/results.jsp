@@ -18,10 +18,12 @@
 		<p>Invalid term, please provide a correct entry.</p>
 	</c:when>
 	<c:otherwise>
-			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br><br>
-			
+			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2>
+			<h3>${thepresident.number}th Term</h3><br>
 		    	<img src="./images/${term}.jpg"/><br>
-		    	
+		    <h3>${thepresident.startTerm}-${thepresident.endTerm}</h3><br>
+		    <h3>${thepresident.party}</h3><br>
+		    
 			<h3>Fun Fact : ${thefact.statement}</h3>
 	</c:otherwise>
 </c:choose>
