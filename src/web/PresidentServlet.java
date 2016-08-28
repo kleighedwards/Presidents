@@ -40,7 +40,14 @@ public class PresidentServlet extends HttpServlet{
 			
 			// if Submit button is pressed with empty field, get the last selected President
 			if(termString == null || termString == ""){
-				term = (int)(session.getAttribute("term"));
+				int oldterm = (Integer)(session.getAttribute("term"));
+				if (oldterm == 0) {
+					session.setAttribute("term", "1");
+					termString = req.getParameter("term");
+				}
+//				else {
+//					term = Integer.parseInt((String)(session.getAttribute("term")));
+//				}
 			}
 			
 			// if input is not an Integer, get the last selected President
@@ -48,7 +55,7 @@ public class PresidentServlet extends HttpServlet{
 				term = Integer.parseInt(termString);
 			}
 			catch (IllegalArgumentException e){			
-				term = (int)(session.getAttribute("term"));
+				term = (Integer)(session.getAttribute("term"));
 			}
 			
 			// if term is in range, get the President
@@ -62,7 +69,7 @@ public class PresidentServlet extends HttpServlet{
 		}
 		
 		if (button.equals("Next")){
-			int oldterm = (int)(session.getAttribute("term"));
+			int oldterm = (Integer)(session.getAttribute("term"));
 			int newterm = oldterm + 1;
 			if (newterm > TERM_MAX) newterm = 1;
 			session.setAttribute("term", newterm);
@@ -71,7 +78,7 @@ public class PresidentServlet extends HttpServlet{
 		}
 		
 		if (button.equals("Previous")){
-			int oldterm = (int)(session.getAttribute("term"));
+			int oldterm = (Integer)(session.getAttribute("term"));
 			int newterm = oldterm - 1;
 			if (newterm <  1) newterm = TERM_MAX;
 			session.setAttribute("term", newterm);

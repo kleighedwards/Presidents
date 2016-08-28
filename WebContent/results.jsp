@@ -10,12 +10,19 @@
 <body>
 
 <form action="Election" method="POST">
-<p>Please enter the President's term:
+  <p>Please enter the President's term:
 	<input type = "text" name ="term"/>
 	<input type = "submit" value="Submit" name="button"/>
 	<input type = "submit" value="Previous" name="button"/>
 	<input type = "submit" value="Next" name="button"/>
-	</p>
+    <select name="Filter">
+       <option value="All Presidents" selected name="fbutton">All Presidents</option>
+       <option value="Democrats" name="fbutton">Democrats</option>
+       <option value="Republicans" name="fbutton">Republicans</option>
+       <option value="Whigs" name="fbutton">Whigs</option>
+       <option value="First Ladies" name="fbutton">First Ladies</option>
+    </select>
+  </p>
 </form>
 
 <c:choose>–
