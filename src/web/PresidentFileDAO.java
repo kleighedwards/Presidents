@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import javax.servlet.ServletContext;
 
@@ -60,9 +61,9 @@ public class PresidentFileDAO implements PresidentDAO {
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-		for(President index: presidents){
-			System.out.println(index);
-		}
+//		for(President index: presidents){
+//			System.out.println(index);
+//		}
 	}
 	
 	private void loadFactsFromFile() {
@@ -74,17 +75,15 @@ public class PresidentFileDAO implements PresidentDAO {
 			while ((line = buf.readLine()) != null) {
 				String[] tokens = line.split(":");
 			    int number = Integer.parseInt(tokens[0].trim());
-			    System.out.println("token[0]: " + number);
 			    String statement = tokens[1].trim();
-			    System.out.println("token[1]: " + statement);
 			    facts.add(new Fact(number, statement));
 			}
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-		for(Fact index: facts){
-			System.out.println(index);
-		}
+//		for(Fact index: facts){
+//			System.out.println(index);
+//		}
 	}
 
 	private int[] getTerms(String terms) {
@@ -95,6 +94,17 @@ public class PresidentFileDAO implements PresidentDAO {
 		return new int[] { startTerm, endTerm };
 	}
 
+	public List<President> filter(List<President> presidents,
+			Predicate <President> predicate) {
+		
+		List<President> filteredList = new ArrayList<>();
+		for (President president : presidents) {
+			if (predicate.test(president))
+				filteredList.add(president);
+		}
+		return filteredList;
+	}
+	
 	@Override
 	public String toString() {
 		return "PresidentFileDAO [presidents=" + presidents + "]";

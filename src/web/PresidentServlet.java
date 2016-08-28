@@ -30,7 +30,7 @@ public class PresidentServlet extends HttpServlet{
 		
 		// if new session, and the Submit button is pressed without term input, get President Washington
 		if(session.getAttribute("term") == null || session.getAttribute("term") == ""){
-			session.setAttribute("term", "1");
+			session.setAttribute("term", 1);
 		}
 		
 		if (button.equals("Submit")){
@@ -45,9 +45,6 @@ public class PresidentServlet extends HttpServlet{
 					session.setAttribute("term", "1");
 					termString = req.getParameter("term");
 				}
-//				else {
-//					term = Integer.parseInt((String)(session.getAttribute("term")));
-//				}
 			}
 			
 			// if input is not an Integer, get the last selected President
@@ -57,6 +54,13 @@ public class PresidentServlet extends HttpServlet{
 			catch (IllegalArgumentException e){			
 				term = (Integer)(session.getAttribute("term"));
 			}
+			
+			//Filtered Lists
+//			List<President> filtered = filter(presidents, (p) -> p.getParty().contains("Democrat"));
+//			List<President> filtered = filter(presidents, (p) -> p.getParty().contains("Republican"));
+//			List<President> filtered = filter(presidents, (p) -> p.getParty().contains("Whig"));
+//			List<President> filtered = filter(presidents, (p) -> p.getParty().contains("Independent"));
+//			List<President> filtered = filter(presidents, (p) -> p.getParty().contains("Federalist"));
 			
 			// if term is in range, get the President
 			if (!((term > TERM_MAX) || (term < 1))){
