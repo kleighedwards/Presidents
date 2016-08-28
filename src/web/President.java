@@ -24,9 +24,9 @@ public class President {
 	public int getNumber() {
 		Short k = new Short((short)9);
 		String s = null;
-		System.out.println(s + null);
+//		System.out.println(s + null);
 		label: if(true) {
-			System.out.println("break label");
+//			System.out.println("break label");
 			break label; //this is valid
 			}
 		switch(1){
