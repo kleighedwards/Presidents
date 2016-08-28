@@ -5,14 +5,25 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="myStyles.css">
-<title>Presidents</title>
+<title>Do you know your U.S. Presidents?</title>
 </head>
 <body>
 <div id="container">
 	<div id="header">
-		<h1>Presidents web site</h1>
+		<h1>Do you know your U.S. Presidents?</h1>
 	</div>
 	<div id="content">
+<c:choose>
+	<c:when test="${term > 44 || term < 1}">
+		<p>Invalid term, please provide a correct entry.</p>
+	</c:when>
+	<c:otherwise>
+			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br>
+		    	<img src="./images/${term}.jpg"/><br>
+		    	
+			<h3>Fun Fact : ${thefact.statement}</h3>
+	</c:otherwise>
+</c:choose>
 		<div id="nav">
 			<h3></h3>
 			<ul>
@@ -24,16 +35,6 @@
 			</ul>
 		</div>
 		<div id="main">
-<c:choose>
-	<c:when test="${term > 44 || term < 1}">
-		<p>Invalid term, please provide a correct entry.</p>
-	</c:when>
-	<c:otherwise>
-			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2><br>
-		
-			<p>Fun Fact : ${thefact.statement}</p>
-	</c:otherwise>
-</c:choose>
 		<form action="Election" method="POST">
  			 <p>Please enter the President's term:
 				<input type = "text" name ="term"/>
