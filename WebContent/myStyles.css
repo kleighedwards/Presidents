@@ -1,7 +1,12 @@
 body {
+<<<<<<< HEAD
     background-image: url("./images/vintage-american.jpg");
     background-repeat: y-repeat;
     background-color: blue;
+=======
+    background-image: url(../images/vintage-american.jpg);
+    background-color: #0066ff;
+>>>>>>> 262f114de4815ac09b4575a26257cfaf0a1ab29f
     background-size:100%;
     
 }
