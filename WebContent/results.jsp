@@ -21,20 +21,19 @@
 			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2>
 			<h3>${thepresident.ordinal} President</h3>
 		    	<img src="./images/${thepresident.number}.jpg"/>
-		    <h3>Term: ${thepresident.startTerm}-${thepresident.endTerm}</h3>
-		    <h3>Party: ${thepresident.party}</h3> 
-			<h3>Fun Fact : ${thefact.statement}</h3>
+		    <p><strong>Term: </strong>${thepresident.startTerm}-${thepresident.endTerm}</p>
+		    <p><strong>Party: </strong>${thepresident.party}</p> 
+			<p><strong>Fun Fact: </strong></p>
+			<p>${thefact.statement}</p>
 	</c:otherwise>
 </c:choose>
-		<div id="nav">
-			<h3></h3>
-		</div>
+		
 		<div id="main">
 		<form action="Election" method="POST">
  			 <p ${filter != 'All Presidents'?'style="visibility:hidden"':''}>Please enter the President's term:
 			 <input type = "text" name ="term" ${filter != 'All Presidents'?'style="visibility:hidden"':''}/></p>
-				<p><input type = "submit" value="Submit" name="button"/>
-				<input type = "submit" value="Previous" name="button"/>
+				<p><input type = "submit" value="Previous" name="button"/>
+				<input type = "submit" value="Submit" name="button"/>
 				<input type = "submit" value="Next" name="button"/></p>
 
 				<p>Filter:

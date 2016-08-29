@@ -11,10 +11,16 @@ a {
 	color: blue;
 }
 
-h1, h2, h3 {
-	margin: 0;
-	margin-left: auto;
-	margin-right: auto;
+h1 {
+	padding: 10px 0px 10px 0px;
+	line-height: 20%;
+	text-align: center;
+}
+
+h2, h3 {
+	padding: 10px 0px 10px 0px;
+	line-height: 40%;
+	text-align: center;
 	padding: 10px;
 }
 
@@ -63,14 +69,16 @@ h1, h2, h3 {
 p {
 	color:black;
   	font-size: 20px;
+  	text-align: center;
+  	line-height: 100%;
 }
 
 img {
-	align: left;
+	display: block;
 	vertical-align:bottom;
     border-radius: 20px;
     background-position: center;
-    max-height: 320px;
+    max-height: 400px;
 	margin-left: auto;
 	margin-right: auto;
 }
