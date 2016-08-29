@@ -1,7 +1,6 @@
 package web;
 
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -33,15 +32,6 @@ public class PresidentServlet extends HttpServlet {
 		int newterm = 0;
 		String button = req.getParameter("button");
 		HttpSession session = req.getSession();
-		
-		Enumeration paramNames = req.getParameterNames();
-
-	    while(paramNames.hasMoreElements()) {
-	      String paramName = (String)paramNames.nextElement();
-	      System.out.println("<tr><td>" + paramName + "</td>\n");
-	      String paramValue = req.getHeader(paramName);
-	      System.out.println("<td> " + paramValue + "</td></tr>\n");
-	   }
 
 		// if new session, and the Submit button is pressed without term input,
 		// default to first president in list
@@ -57,8 +47,10 @@ public class PresidentServlet extends HttpServlet {
 
 		// read user input for President's term
 		String fbutton = req.getParameter("Filter");
-		if (fbutton == null)
-			fbutton = (String)session.getAttribute("filter");
+		if (fbutton == null){
+			session.setAttribute("filter", "All Presidents");
+			fbutton = "All Presidents";
+		}
 		System.out.println("Filter Button Status: " + fbutton);
 
 		// Filtered Lists
@@ -127,7 +119,22 @@ public class PresidentServlet extends HttpServlet {
 					newterm = oldterm + 1;
 					if (newterm > listSize)
 						newterm = 1;
-					session.setAttribute("term", newterm);
+					switch (fbutton) {
+						case ("Democrats"):
+							session.setAttribute("termD", newterm);
+							break;
+						case ("Republicans"):
+							session.setAttribute("termR", newterm);
+							break;
+						case ("Whigs"):
+							session.setAttribute("termW", newterm);
+							break;
+						case ("Independents"):
+							session.setAttribute("termI", newterm);
+							break;
+						case ("Federalists"):
+							session.setAttribute("termF", newterm);
+					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
@@ -136,7 +143,22 @@ public class PresidentServlet extends HttpServlet {
 					newterm = oldterm - 1;
 					if (newterm < 1)
 						newterm = listSize;
-					session.setAttribute("term", newterm);
+					switch (fbutton) {
+						case ("Democrats"):
+							session.setAttribute("termD", newterm);
+							break;
+						case ("Republicans"):
+							session.setAttribute("termR", newterm);
+							break;
+						case ("Whigs"):
+							session.setAttribute("termW", newterm);
+							break;
+						case ("Independents"):
+							session.setAttribute("termI", newterm);
+							break;
+						case ("Federalists"):
+							session.setAttribute("termF", newterm);
+					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
