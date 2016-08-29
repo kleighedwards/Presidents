@@ -41,6 +41,19 @@ public class President {
 		this.number = number;
 	}
 
+	public String ordinal(int term) {
+	    String[] sufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
+	    switch (term % 100) {
+	    case 11:
+	    case 12:
+	    case 13:
+	        return term + "th";
+	    default:
+	        return term + sufixes[term % 10];
+
+	    }
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}

@@ -43,8 +43,7 @@ public class PresidentFileDAO implements PresidentDAO {
 	
 
 	private void loadPresidentsFromFile() {
-		// Retrieve an input stream from the servlet context
-		// rather than directly from the file system
+		// Retrieve an input stream from the servlet context rather than directly from the file system
 		InputStream is = servletContext.getResourceAsStream(filename1);
 		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
 			String line;
@@ -67,8 +66,7 @@ public class PresidentFileDAO implements PresidentDAO {
 	}
 	
 	private void loadFactsFromFile() {
-		// Retrieve an input stream from the servlet context
-		// rather than directly from the file system
+		// Retrieve an input stream from the servlet context rather than directly from the file system
 		InputStream is = servletContext.getResourceAsStream(filename2);
 		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
 			String line;
