@@ -14,6 +14,8 @@
     into the text field at the bottom of the page and clicking the "Submit" button. 
    
       - If the user wanted to view George Washington, for example, they would input 1 into the text field. 
+      - If the user inputs an invalid term number (i.e. 55) the program will notify them of their mistake and they
+        will be allowed to re-enter a valid term number into the text field.
   
   - The user may also cycle through all 44 Presidents by selecting the "Next" and "Previous" buttons. 
   
@@ -27,3 +29,7 @@
       by selecting "Next" and "Previous." These filtered lists will wrap similarly to the "All Presidents" default
       option. The only exception to this rule being "Independents" and Federalists" as there has been only one
       President from either of those parties. 
+
+### Access on AWS
+
+  - Fill in once project is active on AWS.
