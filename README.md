@@ -36,4 +36,4 @@
   
   - Toland Gooch: http://52.36.174.229:8080/Presidents/
   
-  - Rod Hammond: http://rodhammond.info/Presidents/
+  - Rod Hammond: http://rodhammond.info:8080/Presidents/
