@@ -38,7 +38,7 @@
 				<input type = "submit" value="Next" name="button"/></p>
 
 				<p>Filter:
-   			 	<select name="Filter">
+   			 	<select name="Filter" onchange="">
       				<option value="All Presidents" name="fbutton" ${filter == 'All Presidents'?'selected':''}>All Presidents</option>
       				<option value="Democrats" name="fbutton" ${filter == 'Democrats'?'selected':''}>Democrats</option>
       				<option value="Republicans" name="fbutton" ${filter == 'Republicans'?'selected':''}>Republicans</option>
@@ -46,11 +46,9 @@
       			 	<option value="Independents" name="fbutton" ${filter == 'Independents'?'selected':''}>Independents</option>
        				<option value="Federalists" name="fbutton" ${filter == 'Federalists'?'selected':''}>Federalists</option>
     				</select>
-    				</p>
 		</form>	
 		</div>
 	</div>
-	
 	<div id="footer">
 		Copyright &copy; 2016 Rod Hammond, Kristen Edwards, & Toland Gooch
 	</div>

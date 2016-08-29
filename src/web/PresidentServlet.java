@@ -51,53 +51,45 @@ public class PresidentServlet extends HttpServlet {
 			session.setAttribute("filter", "All Presidents");
 			fbutton = "All Presidents";
 		}
-		System.out.println("Filter Button Status:#1 " + fbutton);
 
 		// Filtered Lists
 		switch (fbutton) {
 		case ("All Presidents"): {
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getNumber() > 0);
-			System.out.println(filtered);
 			session.setAttribute("filter", "All Presidents");
 			break;
 		}
 		case ("Democrats"): {
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getParty().contains("Democrat"));
-			System.out.println(filtered);
 			session.setAttribute("filter", "Democrats");
 			oldterm = term = (Integer) (session.getAttribute("termD"));
 			break;
 		}
 		case ("Republicans"): {
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getParty().contains("Republican"));
-			System.out.println(filtered);
 			session.setAttribute("filter", "Republicans");
 			oldterm = term = (Integer) (session.getAttribute("termR"));
 			break;
 		}
 		case ("Whigs"): {
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getParty().contains("Whig"));
-			System.out.println(filtered);
 			session.setAttribute("filter", "Whigs");
 			oldterm = term = (Integer) (session.getAttribute("termW"));
 			break;
 		}
 		case ("Independents"): {
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getParty().contains("Independent"));
-			System.out.println(filtered);
 			session.setAttribute("filter", "Independents");
 			oldterm = term = (Integer) (session.getAttribute("termI"));
 			break;
 		}
 		case ("Federalists"):
 			filtered = presidentDAO.filter(presidentDAO.getPresidents(), (p) -> p.getParty().contains("Federalist"));
-			System.out.println(filtered);
 			session.setAttribute("filter", "Federalists");
 			oldterm = term = (Integer) (session.getAttribute("termF"));
 		}
 
 		// Filtered Actions
-		System.out.println("Filter Button Status:#2 " + fbutton);
 		switch (fbutton) {
 			case ("Democrats"):
 			case ("Republicans"):
@@ -111,6 +103,8 @@ public class PresidentServlet extends HttpServlet {
 					if (!((term > listSize) || (term < 1))) {
 						req.setAttribute("thepresident", filtered.get(term - 1));
 						req.setAttribute("thefact", presidentDAO.getFact(filtered.get(term - 1).getNumber()));
+						req.setAttribute("OfIndex", term);
+						req.setAttribute("OfPool", listSize);
 					}
 	
 					req.setAttribute("term", term);
@@ -138,6 +132,8 @@ public class PresidentServlet extends HttpServlet {
 					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
+					req.setAttribute("OfIndex", term);
+					req.setAttribute("OfPool", listSize);
 				}
 	
 				if (button.equals("Previous")) {
@@ -162,6 +158,8 @@ public class PresidentServlet extends HttpServlet {
 					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
+					req.setAttribute("OfIndex", term);
+					req.setAttribute("OfPool", listSize);
 				}
 	
 				break;
@@ -191,7 +189,6 @@ public class PresidentServlet extends HttpServlet {
 					// if term is in range, get the President
 					if (!((term > TERM_MAX) || (term < 1))) {
 						session.setAttribute("term", term);
-						System.out.println("Submit : Term"+ newterm);
 						req.setAttribute("thepresident", filtered.get(term - 1));
 						req.setAttribute("thefact", presidentDAO.getFact(filtered.get(term - 1).getNumber()));
 					}
@@ -205,7 +202,6 @@ public class PresidentServlet extends HttpServlet {
 					if (newterm > TERM_MAX)
 						newterm = 1;
 					session.setAttribute("term", newterm);
-					System.out.println("Next : Term"+ newterm);
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
@@ -216,7 +212,6 @@ public class PresidentServlet extends HttpServlet {
 					if (newterm < 1)
 						newterm = TERM_MAX;
 					session.setAttribute("term", newterm);
-					System.out.println("Previous : "+ filtered.get(term - 1));
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
