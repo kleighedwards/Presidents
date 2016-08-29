@@ -32,8 +32,8 @@
 		<form action="Election" method="POST">
  			 <p ${filter != 'All Presidents'?'style="visibility:hidden"':''}>Please enter the President's term:
 			 <input type = "text" name ="term" ${filter != 'All Presidents'?'style="visibility:hidden"':''}/></p>
-				<p><input type = "submit" value="Previous" name="button"/>
-				<input type = "submit" value="Submit" name="button"/>
+				<p><input type = "submit" value="Submit" name="button"/>
+				<input type = "submit" value="Previous" name="button"/>
 				<input type = "submit" value="Next" name="button"/></p>
 
 				<p>Filter:
