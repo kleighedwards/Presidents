@@ -32,4 +32,8 @@
 
 ### Access on AWS
 
-  - Fill in once project is active on AWS.
+  - Kristen Edwards: http://52.34.37.216:8080/Presidents/
+  
+  - Toland Gooch: http://52.36.174.229:8080/Presidents/
+  
+  - Rod Hammond: http://rodhammond.info/Presidents/
