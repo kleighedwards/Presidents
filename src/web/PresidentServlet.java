@@ -51,7 +51,7 @@ public class PresidentServlet extends HttpServlet {
 			session.setAttribute("filter", "All Presidents");
 			fbutton = "All Presidents";
 		}
-		System.out.println("Filter Button Status: " + fbutton);
+		System.out.println("Filter Button Status:#1 " + fbutton);
 
 		// Filtered Lists
 		switch (fbutton) {
@@ -97,6 +97,7 @@ public class PresidentServlet extends HttpServlet {
 		}
 
 		// Filtered Actions
+		System.out.println("Filter Button Status:#2 " + fbutton);
 		switch (fbutton) {
 			case ("Democrats"):
 			case ("Republicans"):
@@ -175,7 +176,7 @@ public class PresidentServlet extends HttpServlet {
 					if (termString == null || termString == "") {
 						oldterm = (Integer) (session.getAttribute("term"));
 						if (oldterm == 0) {
-							session.setAttribute("term", "1");
+							session.setAttribute("term", 1);
 							termString = req.getParameter("term");
 						}
 					}
@@ -190,6 +191,7 @@ public class PresidentServlet extends HttpServlet {
 					// if term is in range, get the President
 					if (!((term > TERM_MAX) || (term < 1))) {
 						session.setAttribute("term", term);
+						System.out.println("Submit : Term"+ newterm);
 						req.setAttribute("thepresident", filtered.get(term - 1));
 						req.setAttribute("thefact", presidentDAO.getFact(filtered.get(term - 1).getNumber()));
 					}
@@ -203,6 +205,7 @@ public class PresidentServlet extends HttpServlet {
 					if (newterm > TERM_MAX)
 						newterm = 1;
 					session.setAttribute("term", newterm);
+					System.out.println("Next : Term"+ newterm);
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
@@ -213,6 +216,7 @@ public class PresidentServlet extends HttpServlet {
 					if (newterm < 1)
 						newterm = TERM_MAX;
 					session.setAttribute("term", newterm);
+					System.out.println("Previous : "+ filtered.get(term - 1));
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
 				}
