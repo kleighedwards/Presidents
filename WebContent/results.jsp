@@ -34,8 +34,8 @@
  			 <p ${filter != 'All Presidents'?'style="visibility:hidden"':''}>Please enter the President's term:
 			 <input type = "text" name ="term" ${filter != 'All Presidents'?'style="visibility:hidden"':''}/></p>
 				<p><input type = "submit" value="Submit" name="button"/>
-				<input type = "submit" value="<< Previous" name="button"/>
-				<input type = "submit" value="Next >>" name="button"/></p>
+				<input type = "submit" value="Previous" name="button"/>
+				<input type = "submit" value="Next" name="button"/></p>
 
 				<p>Filter:
    			 	<select name="Filter">
@@ -46,6 +46,7 @@
       			 	<option value="Independents" name="fbutton" ${filter == 'Independents'?'selected':''}>Independents</option>
        				<option value="Federalists" name="fbutton" ${filter == 'Federalists'?'selected':''}>Federalists</option>
     				</select>
+    				</p>
 		</form>	
 		</div>
 	</div>
