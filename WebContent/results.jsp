@@ -19,23 +19,15 @@
 	</c:when>
 	<c:otherwise>
 			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2>
-			<h3>Term Number: ${thepresident.number}</h3><br>
-		    	<img src="./images/${term}.jpg"/><br>
-		    <h3>${thepresident.startTerm}-${thepresident.endTerm}</h3><br>
-		    <h3>${thepresident.party}</h3><br>
-		    
+			<h3>Term Number: ${thepresident.number}</h3>
+		    	<img src="./images/${term}.jpg"/>
+		    <h3>${thepresident.startTerm}-${thepresident.endTerm}</h3>
+		    <h3>${thepresident.party}</h3> 
 			<h3>Fun Fact : ${thefact.statement}</h3>
 	</c:otherwise>
 </c:choose>
 		<div id="nav">
 			<h3></h3>
-			<ul>
-				<li><li>
-				<li><li>
-				<li><li>
-				<li><li>
-				<li><li>
-			</ul>
 		</div>
 		<div id="main">
 		<form action="Election" method="POST">
@@ -44,19 +36,19 @@
 				<input type = "submit" value="Submit" name="button"/><br>
 				<input type = "submit" value="Previous" name="button"/>
 				<input type = "submit" value="Next" name="button"/>
-   			 <select name="Filter">
-      			 <option value="All Presidents" selected name="fbutton">All Presidents</option>
-      			 <option value="Democrats" name="fbutton">Democrats</option>
-      			 <option value="Republicans" name="fbutton">Republicans</option>
-      			 <option value="Whigs" name="fbutton">Whigs</option>
-      			 <option value="Independents" name="fbutton">Independents</option>
-       			<option value="Federalists" name="fbutton">Federalists</option>
-    </select>
-  </p>
-</form>
-		
+   			 	<select name="Filter">
+      				<option value="All Presidents" selected name="fbutton">All Presidents</option>
+      				<option value="Democrats" name="fbutton">Democrats</option>
+      				<option value="Republicans" name="fbutton">Republicans</option>
+      			 	<option value="Whigs" name="fbutton">Whigs</option>
+      			 	<option value="Independents" name="fbutton">Independents</option>
+       				<option value="Federalists" name="fbutton">Federalists</option>
+    			</select>
+  			</p>
+		</form>	
 		</div>
 	</div>
+	
 	<div id="footer">
 		Copyright &copy; 2016 Rod Hammond, Kristen Edwards, & Toland Gooch
 	</div>
