@@ -41,7 +41,9 @@ public class President {
 		this.number = number;
 	}
 
-	public String ordinal(int term) {
+	public String getOrdinal() {
+		int term = this.number;
+		
 	    String[] sufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
 	    switch (term % 100) {
 	    case 11:
