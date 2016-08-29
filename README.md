@@ -16,6 +16,7 @@
       - If the user wanted to view George Washington, for example, they would input 1 into the text field. 
       - If the user inputs an invalid term number (i.e. 55) the program will notify them of their mistake and they
         will be allowed to re-enter a valid term number into the text field.
+      - If the user were to enter non-numeric values into the text field, the program will simply refresh the current page.
   
   - The user may also cycle through all 44 Presidents by selecting the "Next" and "Previous" buttons. 
   
