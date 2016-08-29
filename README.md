@@ -3,12 +3,12 @@
 ## Presidents - An Introduction to Java Web Programming
 
 
-## Application Overview 
+### Application Overview 
 
   Use Java Servlets, Java Beans, and JSP to create a functional website to display U.S. Presidents. 
   
   
-## Execution
+### Execution
 
   - The user is able to select the President they wish to view by inputting their respective term number
     into the text field at the bottom of the page and clicking the "Submit" button. 
