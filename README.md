@@ -16,6 +16,7 @@
       - If the user wanted to view George Washington, for example, they would input 1 into the text field. 
       - If the user inputs an invalid term number (i.e. 55) the program will notify them of their mistake and they
         will be allowed to re-enter a valid term number into the text field.
+      - If the user were to enter non-numeric values into the text field, the program will simply refresh the current page.
   
   - The user may also cycle through all 44 Presidents by selecting the "Next" and "Previous" buttons. 
   
@@ -32,4 +33,8 @@
 
 ### Access on AWS
 
-  - Fill in once project is active on AWS.
+  - Kristen Edwards: http://52.34.37.216:8080/Presidents/
+  
+  - Toland Gooch: http://52.36.174.229:8080/Presidents/
+  
+  - Rod Hammond: http://rodhammond.info:8080/Presidents/
