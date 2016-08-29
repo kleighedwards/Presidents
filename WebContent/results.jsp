@@ -19,10 +19,10 @@
 	</c:when>
 	<c:otherwise>
 			<h2>${thepresident.firstName} ${thepresident.middleName} ${thepresident.lastName}</h2>
-			<h3>Term Number: ${thepresident.number}</h3>
-		    	<img src="./images/${term}.jpg"/>
-		    <h3>${thepresident.startTerm}-${thepresident.endTerm}</h3>
-		    <h3>${thepresident.party}</h3> 
+			<h3>${thepresident.ordinal} President</h3>
+		    	<img src="./images/${thepresident.number}.jpg"/>
+		    <h3>Term: ${thepresident.startTerm}-${thepresident.endTerm}</h3>
+		    <h3>Party: ${thepresident.party}</h3> 
 			<h3>Fun Fact : ${thefact.statement}</h3>
 	</c:otherwise>
 </c:choose>
@@ -31,20 +31,21 @@
 		</div>
 		<div id="main">
 		<form action="Election" method="POST">
- 			 <p>Please enter the President's term:
-				<input type = "text" name ="term"/>
-				<input type = "submit" value="Submit" name="button"/><br>
-				<input type = "submit" value="Previous" name="button"/>
-				<input type = "submit" value="Next" name="button"/>
+ 			 <p ${filter != 'All Presidents'?'style="visibility:hidden"':''}>Please enter the President's term:
+			 <input type = "text" name ="term" ${filter != 'All Presidents'?'style="visibility:hidden"':''}/></p>
+				<p><input type = "submit" value="Submit" name="button"/>
+				<input type = "submit" value="<< Previous" name="button"/>
+				<input type = "submit" value="Next >>" name="button"/></p>
+
+				<p>Filter:
    			 	<select name="Filter">
-      				<option value="All Presidents" selected name="fbutton">All Presidents</option>
-      				<option value="Democrats" name="fbutton">Democrats</option>
-      				<option value="Republicans" name="fbutton">Republicans</option>
-      			 	<option value="Whigs" name="fbutton">Whigs</option>
-      			 	<option value="Independents" name="fbutton">Independents</option>
-       				<option value="Federalists" name="fbutton">Federalists</option>
-    			</select>
-  			</p>
+      				<option value="All Presidents" name="fbutton" ${filter == 'All Presidents'?'selected':''}>All Presidents</option>
+      				<option value="Democrats" name="fbutton" ${filter == 'Democrats'?'selected':''}>Democrats</option>
+      				<option value="Republicans" name="fbutton" ${filter == 'Republicans'?'selected':''}>Republicans</option>
+      			 	<option value="Whigs" name="fbutton" ${filter == 'Whigs'?'selected':''}>Whigs</option>
+      			 	<option value="Independents" name="fbutton" ${filter == 'Independents'?'selected':''}>Independents</option>
+       				<option value="Federalists" name="fbutton" ${filter == 'Federalists'?'selected':''}>Federalists</option>
+    				</select>
 		</form>	
 		</div>
 	</div>
