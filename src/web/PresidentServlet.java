@@ -103,8 +103,6 @@ public class PresidentServlet extends HttpServlet {
 					if (!((term > listSize) || (term < 1))) {
 						req.setAttribute("thepresident", filtered.get(term - 1));
 						req.setAttribute("thefact", presidentDAO.getFact(filtered.get(term - 1).getNumber()));
-						req.setAttribute("OfIndex", term);
-						req.setAttribute("OfPool", listSize);
 					}
 	
 					req.setAttribute("term", term);
@@ -132,8 +130,6 @@ public class PresidentServlet extends HttpServlet {
 					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
-					req.setAttribute("OfIndex", term);
-					req.setAttribute("OfPool", listSize);
 				}
 	
 				if (button.equals("Previous")) {
@@ -158,8 +154,6 @@ public class PresidentServlet extends HttpServlet {
 					}
 					req.setAttribute("thepresident", filtered.get(newterm - 1));
 					req.setAttribute("thefact", presidentDAO.getFact(filtered.get(newterm - 1).getNumber()));
-					req.setAttribute("OfIndex", term);
-					req.setAttribute("OfPool", listSize);
 				}
 	
 				break;
